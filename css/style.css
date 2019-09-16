@@ -1,0 +1,58 @@
+#luke {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid green;
+    float:left;
+    
+}
+#obiWan {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid black;
+    float:left;
+}
+#darthMaul {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid black;
+    float:left;
+}
+#darthVader {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid green;
+    float:left;
+}
+.characterSelection {
+    height: 10rem;
+    width: 20rem;
+    border: 1px solid black;
+}
+
+#lukeEnemy {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid red;
+}
+
+#darthVaderEnemy {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid red;
+}
+
+#lukeDefender {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid blue;
+}
+
+#darthVaderDefender {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid blue;
+}
+
+.hidden {
+    display:none;
+}

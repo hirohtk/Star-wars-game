@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Guess Game</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="reset" href="assets/css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="outerContainer">
+
+        <header>
+            Star Wars RPG Game!
+        </header>
+
+        <div class="characterSelection">
+           
+            <p>Your character</p>
+            <div id="luke" class="character" name="luke">
+                Luke
+                <img>
+                <span id="characterHP">150</span>
+            </div>
+            <!--<div id="obiWan" class="character" name="obiWan">
+                Obi Wan
+                <img>
+                <span id="obiWanHP">150</span>
+            </div>
+            <div id="darthMaul" class="character" name="darthMaul">
+                Darth Maul
+                <img>
+                <span id="darthMaul-HP">150</span>
+            </div>-->
+            <div id="darthVader" class="character" name="darthVader">
+                Darth Vader
+                <img>
+                <span id="characterHP">200</span>
+            </div>
+
+        </div>
+
+        <div class="enemySelection">
+            Enemies able to attack
+            <div id="lukeEnemy" class="enemy hidden" name="luke">
+                    Luke
+                    <img>
+                    <span id="lukeHP">150</span>
+                </div>
+            <div id="darthVaderEnemy" class="enemy hidden" name="darthVader">
+                    Darth Vader
+                    <img>
+                    <span id="darthVaderHP">200</span>
+                </div>
+
+        </div>
+
+        <div class="fightSection">
+            Fight Section
+            <button id="attackButton">Attack</button>
+        </div>
+
+        <div class="defenderSection">
+            Defender 
+            <div id="lukeDefender" class="defender hidden" name="luke">
+                    Luke
+                    <img>
+                    <p class="defenderHP">150</p>
+                </div>
+            <div id="darthVaderDefender" class="defender hidden" name="darthVader">
+                    Darth Vader
+                    <img>
+                    <p class="defenderHP">200</p>
+                </div>
+                
+        </div>
+
+        <div class="winLossMessage">
+                <p id="battleWin"></p>
+                <p id="defeat"></p>
+        </div>
+
+        
+
+
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+
+    <script src="javascript/game.js"></script>
+
+</body>
+
+</html>
