@@ -20,8 +20,10 @@ var obiWan = {
 }
 
 var darthMaul = {
-    hp: 150,
-    ap: 6,
+    hp: 125,
+    ap: 8,
+    initialap: 8,
+    name: "darthMaul",
 }
 
 var winCounter = 0;
@@ -35,29 +37,30 @@ $(document).ready(function () {
         $(".character").one("click", function () { // using .one instead of .on makes it so this only runs once (could do off("click") otherwise to reset) (see below)
 
             characterSelected = $(this).attr("name");
-
-            console.log("character selected is" + " " + characterSelected);
+            //$("#attackButton").off("click");
+            assignRole1();
+            console.log("character selected is" + " " + characterSelected.name);
             enemyPlacement();
         });
 
     }
 
     function enemyPlacement() {
-        if (characterSelected === "darthVader") {
+        if (characterSelected.name === "darthVader") {
 
             $("#luke").addClass("hidden");
             $("#lukeEnemy").removeClass("hidden")
             $("#obiWan").addClass("hidden");
             $("#obiWanEnemy").removeClass("hidden")
         }
-        else if (characterSelected === "luke") {
+        else if (characterSelected.name === "luke") {
 
             $("#darthVader").addClass("hidden");
             $("#darthVaderEnemy").removeClass("hidden")
             $("#obiWan").addClass("hidden");
             $("#obiWanEnemy").removeClass("hidden")
         }
-        else if (characterSelected === "obiWan") {
+        else if (characterSelected.name === "obiWan") {
             $("#luke").addClass("hidden");
             $("#lukeEnemy").removeClass("hidden")
             $("#darthVader").addClass("hidden");
@@ -76,7 +79,9 @@ $(document).ready(function () {
         $(".enemy").one("click", function () { // using .one instead of .on makes it so this only runs once (could do off("click") otherwise to reset) (see below)
 
             enemySelected = $(this).attr("name");
-            
+            $("#battleWin").text("");
+            //$("#attackButton").off("click");
+            assignRole2();
             defenderPlacement();
             
         });
@@ -115,18 +120,18 @@ $(document).ready(function () {
     function defenderPlacement() {
         // guidelines:  hide yourself, hide your enemy.  unhide that defender.  everyone else is unhidden
         console.log("if you see this, defenderPlacement is working up to here");
-        console.log(enemySelected);
-        console.log(characterSelected);
+        console.log(enemySelected.name);
+        console.log(characterSelected.name);
         
         // enemy is vader, character is luke  
-        if (enemySelected === "darthVader" && characterSelected === "luke") {
+        if (enemySelected.name === "darthVader" && characterSelected.name === "luke") {
             console.log("you are luke and vader is your enemy")
             $("#lukeEnemy").addClass("hidden"); 
             $("#darthVaderEnemy").addClass("hidden");
             $("#darthVaderDefender").removeClass("hidden")
         }
         // enemy is vader, character is obi wan
-        if (enemySelected === "darthVader" && characterSelected === "obiWan") {
+        if (enemySelected.name === "darthVader" && characterSelected.name === "obiWan") {
             console.log("you are obi wan and vader is your enemy")
             if (winCounter > 0) {
                 console.log("round 2");
@@ -136,14 +141,14 @@ $(document).ready(function () {
             $("#darthVaderDefender").removeClass("hidden")
         }
         // enemy is luke, character is vader
-        else if (enemySelected === "luke" && characterSelected === "darthVader") {
+        else if (enemySelected.name === "luke" && characterSelected.name === "darthVader") {
             console.log("you are vader and luke is your enemy")
             $("#darthVaderEnemy").addClass("hidden");
             $("#lukeEnemy").addClass("hidden");
             $("#lukeDefender").removeClass("hidden");
         }
         // enemy is luke, character is obiwan
-        else if (enemySelected === "luke" && characterSelected === "obiWan") {
+        else if (enemySelected.name === "luke" && characterSelected.name === "obiWan") {
             console.log("you are obi wan and luke is your enemy")
             
             $("#obiWanEnemy").addClass("hidden");
@@ -152,14 +157,14 @@ $(document).ready(function () {
         }
 
         // enemy is obiwan, character is luke
-        else if (enemySelected === "obiWan" && characterSelected === "luke") {
+        else if (enemySelected.name === "obiWan" && characterSelected.name === "luke") {
             console.log("you are luke and obi wan is your enemy")
             $("#lukeEnemy").addClass("hidden");
             $("#obiWanEnemy").addClass("hidden");
             $("#obiWanDefender").removeClass("hidden");
         }
         // enemy is obiwan, character is vader 
-        else if (enemySelected === "obiWan" && characterSelected === "darthVader") {
+        else if (enemySelected.name === "obiWan" && characterSelected.name === "darthVader") {
             console.log("you are darth vader and obi wan is your enemy")
             $("#darthVaderEnemy").addClass("hidden");
             $("#obiWanEnemy").addClass("hidden");
@@ -168,9 +173,9 @@ $(document).ready(function () {
         else {
 
         }
-        console.log("assigning roles");
-        assignRole1();
-        assignRole2();
+        
+        $(".defenderHP").text(enemySelected.hp);
+        
     }
 
     function restart() {
@@ -210,6 +215,8 @@ $(document).ready(function () {
             $("#lukeHP").text(luke.hp);
             $("#darthVaderHP").text(darthVader.hp);
             $("#obiWanHP").text(obiWan.hp);
+            $("#defeat").text("");
+            $("#battleWin").text("");
             mainGame();
         });
     }
@@ -270,7 +277,6 @@ $(document).ready(function () {
 
     }
 
-
     function mainGame() {
         $("#lukeHP").text(luke.hp);
         $("#darthVaderHP").text(darthVader.hp);
@@ -280,8 +286,6 @@ $(document).ready(function () {
         enemySelection(); //does defenderPlacement
         $("#attackButton").on("click", attack) //attack button wasn't working when this was within the attack() function
     }
-
-
 
     mainGame();
 });

@@ -1,3 +1,7 @@
+body {
+    margin-left: 20rem;
+}
+
 #luke {
     height: 4rem;
     width: 4rem;
@@ -29,16 +33,40 @@
     border: 1px solid black;
 }
 
+.enemySelection {
+    height: 10rem;
+    width: 20rem;
+    border: 1px solid black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.defenderSection {
+    height: 10rem;
+    width: 20rem;
+    border: 1px solid black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 #lukeEnemy {
     height: 4rem;
     width: 4rem;
     border: 1px solid red;
+    float:left;
 }
 
 #darthVaderEnemy {
     height: 4rem;
     width: 4rem;
     border: 1px solid red;
+    float:left;
+}
+
+#obiWanEnemy {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid red;
+    float:left;
 }
 
 #lukeDefender {
@@ -52,6 +80,13 @@
     width: 4rem;
     border: 1px solid blue;
 }
+
+#obiWanDefender {
+    height: 4rem;
+    width: 4rem;
+    border: 1px solid blue;
+}
+
 
 .hidden {
     display:none;
