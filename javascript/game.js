@@ -26,14 +26,10 @@ var darthMaul = {
 
 var winCounter = 0;
 
-
 var characterSelected = "";
 var enemySelected = "";
 
 $(document).ready(function () {
-
-
-
 
     function characterSelection() {
         $(".character").one("click", function () { // using .one instead of .on makes it so this only runs once (could do off("click") otherwise to reset) (see below)
@@ -76,11 +72,15 @@ $(document).ready(function () {
     }
 
     function enemySelection() {
+        $(".enemy").unbind("click"); // and weird double click happening, needed this. 
         $(".enemy").one("click", function () { // using .one instead of .on makes it so this only runs once (could do off("click") otherwise to reset) (see below)
 
             enemySelected = $(this).attr("name");
+            
             defenderPlacement();
+            
         });
+        
     }
 
     function assignRole1() {
@@ -114,31 +114,38 @@ $(document).ready(function () {
 
     function defenderPlacement() {
         // guidelines:  hide yourself, hide your enemy.  unhide that defender.  everyone else is unhidden
-
+        console.log("if you see this, defenderPlacement is working up to here");
+        console.log(enemySelected);
+        console.log(characterSelected);
+        
         // enemy is vader, character is luke  
         if (enemySelected === "darthVader" && characterSelected === "luke") {
-            console.log("vader has been chosen as an enemy")
+            console.log("you are luke and vader is your enemy")
             $("#lukeEnemy").addClass("hidden"); 
             $("#darthVaderEnemy").addClass("hidden");
             $("#darthVaderDefender").removeClass("hidden")
         }
         // enemy is vader, character is obi wan
         if (enemySelected === "darthVader" && characterSelected === "obiWan") {
-            console.log("vader has been chosen as an enemy")
+            console.log("you are obi wan and vader is your enemy")
+            if (winCounter > 0) {
+                console.log("round 2");
+            }
             $("#obiWanEnemy").addClass("hidden"); 
             $("#darthVaderEnemy").addClass("hidden");
             $("#darthVaderDefender").removeClass("hidden")
         }
         // enemy is luke, character is vader
         else if (enemySelected === "luke" && characterSelected === "darthVader") {
-            console.log("luke has been chosen as an enemy")
+            console.log("you are vader and luke is your enemy")
             $("#darthVaderEnemy").addClass("hidden");
             $("#lukeEnemy").addClass("hidden");
             $("#lukeDefender").removeClass("hidden");
         }
         // enemy is luke, character is obiwan
         else if (enemySelected === "luke" && characterSelected === "obiWan") {
-            console.log("luke has been chosen as an enemy")
+            console.log("you are obi wan and luke is your enemy")
+            
             $("#obiWanEnemy").addClass("hidden");
             $("#lukeEnemy").addClass("hidden");
             $("#lukeDefender").removeClass("hidden");
@@ -146,14 +153,14 @@ $(document).ready(function () {
 
         // enemy is obiwan, character is luke
         else if (enemySelected === "obiWan" && characterSelected === "luke") {
-            console.log("obiWan has been chosen as an enemy")
+            console.log("you are luke and obi wan is your enemy")
             $("#lukeEnemy").addClass("hidden");
             $("#obiWanEnemy").addClass("hidden");
             $("#obiWanDefender").removeClass("hidden");
         }
         // enemy is obiwan, character is vader 
         else if (enemySelected === "obiWan" && characterSelected === "darthVader") {
-            console.log("obiWan has been chosen as an enemy")
+            console.log("you are darth vader and obi wan is your enemy")
             $("#darthVaderEnemy").addClass("hidden");
             $("#obiWanEnemy").addClass("hidden");
             $("#obiWanDefender").removeClass("hidden");
@@ -161,6 +168,7 @@ $(document).ready(function () {
         else {
 
         }
+        console.log("assigning roles");
         assignRole1();
         assignRole2();
     }
@@ -215,7 +223,7 @@ $(document).ready(function () {
 
     function continueGame() {
         enemySelection(); //does defenderPlacement
-        $("#attackButton").on("click", attack)
+        $("#attackButton").on("click", attack);
     }
 
     function check() {
@@ -232,7 +240,7 @@ $(document).ready(function () {
             winCounter++;
             console.log("Wins so far is" + " " + winCounter);
             //have to hide person that lost 
-            console.log("enemy defeated was" + " " + enemySelected);
+            console.log("enemy defeated was" + " " + enemySelected.name);
             if (enemySelected.name === "darthVader") {
                 $("#darthVaderDefender").addClass("hidden");
             }
