@@ -317,15 +317,27 @@ $(document).ready(function () {
             console.log("enemy defeated was" + " " + enemySelected.name);
             if (enemySelected.name === "darthVader") {
                 $("#darthVaderDefender").addClass("hidden");
+
+                // RESET EVERYONE ELSES DEFENDER HP HERE???  
+                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             else if (enemySelected.name === "luke") {
                 $("#lukeDefender").addClass("hidden");
+
+                // RESET EVERYONE ELSES DEFENDER HP HERE???  
+                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             else if (enemySelected.name === "obiWan") {
                 $("#obiWanDefender").addClass("hidden");
+                
+                // RESET EVERYONE ELSES DEFENDER HP HERE???  
+                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             else if (enemySelected.name === "darthMaul") {
                 $("#darthMaulDefender").addClass("hidden");
+
+                // RESET EVERYONE ELSES DEFENDER HP HERE???  
+                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             continueGame();
         }
