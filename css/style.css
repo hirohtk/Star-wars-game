@@ -1,103 +1,178 @@
+
+
 body {
-    margin-left: 20rem;
+    margin-left: 35rem;
+    /*background-image: url("../assets/original.jpg");*/
+
+    background:  url(../assets/space_loop.gif) no-repeat center center fixed; 
+    background-size: cover;
+}
+
+header {
+    font-size: 20px;
+    margin-left: 18rem;
+}
+
+header, .fightSectionText{
+    font-weight: bold;
+    color:gold;
+}
+
+.blackBold {
+    font-weight: bold;
+    color: beige;
+}
+
+#battleWin, #defeat {
+    color:white;
+    font-weight: bold;
 }
 
 #luke {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid green;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove lightgreen;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
     
 }
 #obiWan {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid green;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove lightgreen;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 #darthMaul {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid green;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove lightgreen;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 #darthVader {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid green;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove lightgreen;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 .characterSelection {
-    height: 10rem;
-    width: 20rem;
+    height: 15rem;
+    width: 50rem;
     border: 1px solid black;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: rgba(211, 211, 211, 0.5);
+    
 }
 
 .enemySelection {
-    height: 10rem;
-    width: 20rem;
+    height: 15rem;
+    width: 50rem;
     border: 1px solid black;
     margin-top: 1rem;
     margin-bottom: 1rem;
+  
+    background-color: rgba(211, 211, 211, 0.5);
 }
 
 .defenderSection {
-    height: 10rem;
-    width: 20rem;
+    height: 15rem;
+    width: 50rem;
     border: 1px solid black;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    background-color: rgba(211, 211, 211, 0.5);
+    
 }
 #lukeEnemy {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid red;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove yellow;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
+    
 }
 
 #darthVaderEnemy {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid red;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove yellow;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 #darthMaulEnemy {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid red;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove yellow;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 #obiWanEnemy {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid red;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove yellow;
     float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 #lukeDefender {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid blue;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove red;
+    float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 #darthVaderDefender {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid blue;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove red;
+    float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 #obiWanDefender {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid blue;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove red;
+    float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 #darthMaulDefender {
-    height: 4rem;
-    width: 4rem;
-    border: 1px solid blue;
+    height: 11rem;
+    width: 11rem;
+    border: 3px groove red;
+    float:left;
+    margin-left: 1rem;
+    overflow: hidden;
+    background-color: lightgray;
 }
 
 

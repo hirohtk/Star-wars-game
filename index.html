@@ -12,7 +12,7 @@
 </head>
 
 <body>
-
+<div class = "bg">
     <div class="outerContainer">
 
         <header>
@@ -21,84 +21,84 @@
 
         <div class="characterSelection">
 
-            <p>Your character</p>
+            <p class = "blackBold">Your character</p>
             <div id="luke" class="character" name="luke">
                 Luke
-                <img class="characterImage">
-                <span class="characterHP" id="lukeHP"></span>
+                <img class="characterImage" src="assets/luke_small.jpg">
+                <p class="characterHP" id="lukeHP"></p>
             </div>
             <div id="obiWan" class="character" name="obiWan">
                 Obi Wan
-                <img class="characterImage">
-                <span class="characterHP" id="obiWanHP"></span>
+                <img class="characterImage" src="assets/obi-wan.jpg">
+                <p class="characterHP" id="obiWanHP"></p>
             </div>
             <div id="darthMaul" class="character" name="darthMaul">
                 Darth Maul
-                <img class="characterImage">
-                <span class="characterHP" id="darthMaulHP"></span>
+                <img class="characterImage" src="assets/darth_maul.jpg">
+                <p class="characterHP" id="darthMaulHP"></p>
             </div>
             <div id="darthVader" class="character" name="darthVader">
                 Darth Vader
-                <img class="characterImage">
-                <span class="characterHP" id="darthVaderHP"></span>
+                <img class="characterImage" src="assets/darth_vader.jpg">
+                <p class="characterHP" id="darthVaderHP"></p>
             </div>
 
         </div>
 
         <div class="enemySelection">
-            <p>Enemies able to attack</p>
+            <p class = "blackBold">Enemies able to attack</p>
             <div id="lukeEnemy" class="enemy hidden" name="luke">
                 Luke
-                <img class="characterImage">
-                <span id="lukeHP">100</span>
+                <img class="characterImage" src="assets/luke_small.jpg">
+                <p id="lukeHP">100</p>
             </div>
             <div id="obiWanEnemy" class="enemy hidden" name="obiWan">
                 Obi Wan
-                <img class="characterImage">
-                <span id="obiWanHP">50</span>
+                <img class="characterImage" src="assets/obi-wan.jpg">
+                <p id="obiWanHP">50</p>
             </div>
             <div id="darthMaulEnemy" class="enemy hidden" name="darthMaul">
                 Darth Maul
-                <img class="characterImage">
-                <span id="darthMaulHP">65</span>
+                <img class="characterImage" src="assets/darth_maul.jpg">
+                <p id="darthMaulHP">65</p>
             </div>
             <div id="darthVaderEnemy" class="enemy hidden" name="darthVader">
                 Darth Vader
-                <img class="characterImage">
-                <span id="darthVaderHP">125</span>
+                <img class="characterImage" src="assets/darth_vader.jpg">
+                <p id="darthVaderHP">125</p>
             </div>
 
 
         </div>
 
         <div class="fightSection">
-            <span class="fightSectionText">Fight Section</span>
+            <p class="fightSectionText">Fight Section</p>
             <button id="attackButton">Attack</button>
         </div>
 
         <div class="defenderSection">
-            <p>Defender</p>
+            <p class= "blackBold">Defender</p>
             <div id="lukeDefender" class="defender hidden" name="luke">
                 Luke
-                <img class="defenderImage">
+                <img class="characterImage" src="assets/luke_small.jpg">
 
                 <p class="defenderHP"></p>
             </div>
             <div id="darthVaderDefender" class="defender hidden" name="darthVader">
                 Darth Vader
-                <img class="defenderImage">
+                <img class="characterImage" src="assets/darth_vader.jpg">
 
                 <p class="defenderHP"></p>
             </div>
             <div id="obiWanDefender" class="defender hidden" name="obiWan">
                 Obi Wan
-                <img class="defenderImage">
+                <img class="characterImage" src="assets/obi-wan.jpg">
 
                 <p class="defenderHP"></p>
             </div>
             <div id="darthMaulDefender" class="defender hidden" name="darthMaul">
                 Darth Maul
-                <img class="defenderImage">
+                <img class="characterImage" src="assets/darth_maul.jpg">
 
                 <p class="defenderHP"></p>
             </div>
@@ -121,7 +121,7 @@
     </footer>
 
     <script src="javascript/game.js"></script>
-
+</div>
 </body>
 
 </html>

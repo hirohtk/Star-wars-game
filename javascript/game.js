@@ -339,6 +339,8 @@ $(document).ready(function () {
             $("#obiWanDefender").addClass("hidden");
             $("#darthVaderDefender").addClass("hidden");
             $("#darthMaulDefender").addClass("hidden");
+            $(".fightSectionText").text("");
+            $("#attackButton").unbind("click");
             restart();
 
         }
