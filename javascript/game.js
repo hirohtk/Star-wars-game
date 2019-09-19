@@ -90,7 +90,8 @@ $(document).ready(function () {
 
     function enemySelection() {
         $(".enemy").unbind("click"); // and weird double click happening, needed this.
-
+        $("#attackButton").unbind("click");
+        $(".fightSectionText").text("Fight Section");
         $(".enemy").one("click", function () { // using .one instead of .on makes it so this only runs once (could do off("click") otherwise to reset) (see below)
             console.log("if you see this, enemyPlacement is working up to here");
             enemySelected = $(this).attr("name");
@@ -137,6 +138,23 @@ $(document).ready(function () {
         }
         console.log("Enemy assigned is" + " " + enemySelected.name);
         console.log("enemy assigned HP is" + " " + enemySelected.hp)
+    }
+
+    function attack() {
+
+        
+        console.log("attacking...");
+        enemySelected.hp -= characterSelected.ap;
+        characterSelected.ap += characterSelected.initialap;
+        characterSelected.hp -= enemySelected.ap;
+        console.log("***Your character's HP is NOW" + "" + characterSelected.hp);
+        console.log("***Your enemy's HP is NOW" + "" + enemySelected.hp);
+        console.log("***Your character's AP is NOW" + "" + characterSelected.ap);
+        $(".characterHP").text(characterSelected.hp);
+        $(".defenderHP").text(enemySelected.hp);
+        console.log("...attack done");
+        check();
+
     }
 
     function defenderPlacement() {
@@ -235,7 +253,8 @@ $(document).ready(function () {
         }
         else {
         }
-
+        $(".fightSectionText").text("Press attack!");
+        $("#attackButton").on("click", attack);
         $(".defenderHP").text(enemySelected.hp);
 
     }
@@ -301,9 +320,9 @@ $(document).ready(function () {
     }
 
     function check() {
-        enemiesLeftChecker();
-
         
+
+
         if (characterSelected.hp < 1) {
             $("#defeat").text("You Lose.  Game Over.");
             //$("#attackButton").unbind("click", attack);
@@ -319,55 +338,28 @@ $(document).ready(function () {
             console.log("enemy defeated was" + " " + enemySelected.name);
             if (enemySelected.name === "darthVader") {
                 $("#darthVaderDefender").addClass("hidden");
-
                 
-                // RESET EVERYONE ELSES HP HERE???  
-                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
-                // OR NOT- JUST MAKE SURE ENEMYSELECTION DOESNT REFERENCE PREVIOUS ENEMY
             }
             else if (enemySelected.name === "luke") {
                 $("#lukeDefender").addClass("hidden");
 
-
-                // RESET EVERYONE ELSES HP HERE???  
-                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             else if (enemySelected.name === "obiWan") {
                 $("#obiWanDefender").addClass("hidden");
 
-
-                // RESET EVERYONE ELSES HP HERE???  
-                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             else if (enemySelected.name === "darthMaul") {
                 $("#darthMaulDefender").addClass("hidden");
 
-
-                // RESET EVERYONE ELSES HP HERE???  
-                // SHOULDNT MATTER TO REPLENISH EVERYONE ELSE SINCE THEY EITHER SHOULD BE UNTOUCHED OR ARE HIDDEN ANYWAY (WIN COUNT IS WHAT MATTERS)?
             }
             $("#" + enemySelected.name + "Defender").text(enemySelected.hp);
+            enemiesLeftChecker();
             continueGame();
         }
 
     }
 
-    function attack() {
 
-        
-        console.log("attacking...");
-        enemySelected.hp -= characterSelected.ap;
-        characterSelected.ap += characterSelected.initialap;
-        characterSelected.hp -= enemySelected.ap;
-        console.log("***Your character's HP is NOW" + "" + characterSelected.hp);
-        console.log("***Your enemy's HP is NOW" + "" + enemySelected.hp);
-        console.log("***Your character's AP is NOW" + "" + characterSelected.ap);
-        $(".characterHP").text(characterSelected.hp);
-        $(".defenderHP").text(enemySelected.hp);
-        console.log("...attackdone");
-        check();
-
-    }
 
     function mainGame() {
         $("#lukeHP").text(luke.hp);
@@ -377,7 +369,7 @@ $(document).ready(function () {
         $(".restart").addClass("hidden");
         characterSelection(); //does enemyPlacement
         enemySelection(); //does defenderPlacement
-        $("#attackButton").on("click", attack) //attack button wasn't working when this was within the attack() function
+         //attack button wasn't working when this was within the attack() function
     }
 
     mainGame();
