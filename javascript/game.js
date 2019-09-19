@@ -1,28 +1,28 @@
 var luke = {
-    hp: 150,
-    ap: 3,
-    initialap: 3,
+    hp: 100,
+    ap: 7,
+    initialap: 7,
     name: "luke",
 }
 
 var darthVader = {
-    hp: 200,
-    ap: 2,
-    initialap: 2,
+    hp: 125,
+    ap: 5,
+    initialap: 5,
     name: "darthVader",
 }
 
 var obiWan = {
-    hp: 100,
-    ap: 5,
-    initialap: 5,
+    hp: 50,
+    ap: 18,
+    initialap: 18,
     name: "obiWan",
 }
 
 var darthMaul = {
-    hp: 125,
-    ap: 4,
-    initialap: 4,
+    hp: 65,
+    ap: 16,
+    initialap: 16,
     name: "darthMaul",
 }
 
@@ -41,6 +41,7 @@ $(document).ready(function () {
             assignRole1();
             console.log("character selected is" + " " + characterSelected.name);
             enemyPlacement();
+            $(".character").unbind("click");
         });
 
     }
@@ -100,8 +101,9 @@ $(document).ready(function () {
 
             assignRole2();
             defenderPlacement();
-
+            $(".enemy").unbind("click");
         });
+        
 
     }
 
@@ -162,7 +164,7 @@ $(document).ready(function () {
         console.log("if you see this, defenderPlacement is working up to here");
         console.log(enemySelected.name);
         console.log(characterSelected.name);
-
+        $(".defenderHP").text(enemySelected.hp);
         // enemy is vader, character is luke  
         if (enemySelected.name === "darthVader" && characterSelected.name === "luke") {
             console.log("you are luke and vader is your enemy")
@@ -254,8 +256,9 @@ $(document).ready(function () {
         else {
         }
         $(".fightSectionText").text("Press attack!");
+        
         $("#attackButton").on("click", attack);
-        $(".defenderHP").text(enemySelected.hp);
+        
 
     }
 
@@ -263,30 +266,30 @@ $(document).ready(function () {
         $(".restart").removeClass("hidden");
         $(".restart").one("click", function () {
             luke = {
-                hp: 150,
-                ap: 3,
-                initialap: 3,
+                hp: 100,
+                ap: 7,
+                initialap: 7,
                 name: "luke",
             }
-
+            
             darthVader = {
-                hp: 200,
-                ap: 2,
-                initialap: 2,
-                name: "darthVader",
-            }
-
-            obiWan = {
-                hp: 100,
+                hp: 125,
                 ap: 5,
                 initialap: 5,
+                name: "darthVader",
+            }
+            
+            obiWan = {
+                hp: 50,
+                ap: 18,
+                initialap: 18,
                 name: "obiWan",
             }
-
+            
             darthMaul = {
-                hp: 125,
-                ap: 4,
-                initialap: 4,
+                hp: 65,
+                ap: 16,
+                initialap: 16,
                 name: "darthMaul",
             }
             winCounter = 0;
@@ -302,6 +305,8 @@ $(document).ready(function () {
             $("#darthMaulHP").text(obiWan.hp);
             $("#defeat").text("");
             $("#battleWin").text("");
+            
+
             mainGame();
         });
     }
@@ -326,10 +331,19 @@ $(document).ready(function () {
         if (characterSelected.hp < 1) {
             $("#defeat").text("You Lose.  Game Over.");
             //$("#attackButton").unbind("click", attack);
+            $("#lukeEnemy").addClass("hidden");
+            $("#obiWanEnemy").addClass("hidden");
+            $("#darthVaderEnemy").addClass("hidden");
+            $("#darthMaulEnemy").addClass("hidden");
+            $("#lukeDefender").addClass("hidden");
+            $("#obiWanDefender").addClass("hidden");
+            $("#darthVaderDefender").addClass("hidden");
+            $("#darthMaulDefender").addClass("hidden");
             restart();
 
         }
         else if (enemySelected.hp < 1) {
+            
             $("#battleWin").text("You defeated your opponent.  Choose another opponent");
             //$("#attackButton").unbind("click");
             winCounter++;
@@ -339,20 +353,27 @@ $(document).ready(function () {
             if (enemySelected.name === "darthVader") {
                 $("#darthVaderDefender").addClass("hidden");
                 
+                $(".defenderHP").text(enemySelected.hp);
             }
             else if (enemySelected.name === "luke") {
                 $("#lukeDefender").addClass("hidden");
-
+               
+                $(".defenderHP").text(enemySelected.hp);
+                
             }
             else if (enemySelected.name === "obiWan") {
                 $("#obiWanDefender").addClass("hidden");
-
+                
+                $(".defenderHP").text(enemySelected.hp);
+                
             }
             else if (enemySelected.name === "darthMaul") {
                 $("#darthMaulDefender").addClass("hidden");
-
+                
+                $(".defenderHP").text(enemySelected.hp);
+                
             }
-            $("#" + enemySelected.name + "Defender").text(enemySelected.hp);
+            //$("#" + enemySelected.name + "Defender").text(enemySelected.hp);  Looks like I could have used this to condense some code...
             enemiesLeftChecker();
             continueGame();
         }
