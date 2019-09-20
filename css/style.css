@@ -20,7 +20,7 @@ header, .fightSectionText{
 
 .blackBold {
     font-weight: bold;
-    color: beige;
+    color: lightyellow;
 }
 
 #battleWin, #defeat {
@@ -71,7 +71,7 @@ header, .fightSectionText{
     border: 1px solid black;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(91, 91, 91, 0.486);
     
 }
 
@@ -82,7 +82,7 @@ header, .fightSectionText{
     margin-top: 1rem;
     margin-bottom: 1rem;
   
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(91, 91, 91, 0.486);
 }
 
 .defenderSection {
@@ -91,7 +91,7 @@ header, .fightSectionText{
     border: 1px solid black;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(91, 91, 91, 0.486);
     
 }
 #lukeEnemy {
