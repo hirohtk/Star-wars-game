@@ -7,3 +7,5 @@ Characters with higher hitpoints tend to have lower attack power, and vice versa
 
 The objective of this game is for your character to defeat the other opponents while still having hitpoints remaining at the
 end of the game.  
+
+Link to deployed site: https://hirohtk.github.io/Star-wars-game/
